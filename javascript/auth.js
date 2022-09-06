@@ -1,4 +1,5 @@
-import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+// 'https://www.gstatic.com/firebasejs/9.9.4/firebase'
+import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 
 export class Auth {
     constructor(app){
