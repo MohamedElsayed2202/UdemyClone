@@ -6,7 +6,7 @@ export class DB {
         this.db = getFirestore(app);
     }
 
-    async createUser(id,name, type){
+    async createUser(id, name, type){
         try{
               await setDoc(doc(this.db,'users',id),{
                 name: name,

@@ -11,12 +11,10 @@ const firebaseConfig = {
   appId: "1:1032707806231:web:c76c757ff5910e9e6bf852"
 };
 const app = initializeApp(firebaseConfig);
-const db = new DB(app);
-
-db.createUser('123456789','Mohamed Elsayed','Student');
-// const auth = new Auth(app);
-// auth.SignUp();
-
+// const db = new DB(app);
+const auth = new Auth(app);
+// auth.signUp('beado@gmail.com',123456,'Mohamed Elsayed', 'student');
+auth.signUp('beeado@gmail.com',123456,'Mohamed Zayed', 'instructor');
 
 
 

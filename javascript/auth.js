@@ -1,19 +1,24 @@
-// 'https://www.gstatic.com/firebasejs/9.9.4/firebase'
+// 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js'
 import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-
+import { DB } from './db.js';
 export class Auth {
     constructor(app){
         this.auth = getAuth(app);
+        this.db = new DB(app);
     }
 
-    async SignUp (email, password) {
+    async signUp (email, password, name, type) {
         try{
-            var user = await createUserWithEmailAndPassword(this.auth, 'beado@gmail.com', 123456);
-            console.log(user.user.uid)
+            let user = await createUserWithEmailAndPassword(this.auth, email, password);
+            let uid = user.user.uid;
+            console.log(uid);
+            let token = await user.user.getIdToken();
+            localStorage.setItem('uid', uid);
+            localStorage.setItem('token', token);
+            this.db.createUser(uid, name, type);
         }catch(e){
             console.log(e)
         }
-        
 
     }
 };
