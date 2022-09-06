@@ -17,5 +17,3 @@ const auth = new Auth(app);
 auth.signUp('beeado@gmail.com',123456,'Mohamed Zayed', 'instructor');
 
 
-
-
