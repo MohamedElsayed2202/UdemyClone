@@ -2,6 +2,7 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
 import {Auth} from './auth.js'
 import { DB } from './db.js';
+import { Storage } from './storage.js';
 const firebaseConfig = {
   apiKey: "AIzaSyBTNtE77ZFyWiB8F8low9IpAr7hT-mBqvI",
   authDomain: "udemy-clone-69601.firebaseapp.com",
@@ -13,7 +14,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // const db = new DB(app);
 const auth = new Auth(app);
+auth.checkUserStatus();
+const storage = new Storage(app);
+storage.uploadUserImage(123456)
 // auth.signUp('beado@gmail.com',123456,'Mohamed Elsayed', 'student');
-auth.signUp('beeado@gmail.com',123456,'Mohamed Zayed', 'instructor');
+// auth.signUp('beeado@gmail.com',123456,'Mohamed Zayed', 'instructor');
 
 
