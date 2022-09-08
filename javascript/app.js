@@ -21,5 +21,3 @@ storage.uploadUserImage(123456)
 // auth.signUp('beeado@gmail.com',123456,'Mohamed Zayed', 'instructor');
 
 
-
-
