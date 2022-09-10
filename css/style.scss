@@ -1,4 +1,7 @@
-
+body,html{
+  height: 100%;
+  margin: 0;
+}
 .ip{
     background-color:white;
     border: 0px;
@@ -11,7 +14,6 @@ button{
     
 }
 form{
-    
     width: 90% !important;
     margin: auto !important;
     border: 1px ;
@@ -24,7 +26,7 @@ form{
     }
 }
 header{
-  background-image: url('./images/eLearning\ Girl\ on\ Laptop_edited.webp');
+  background-image: url('../images/eLearning\ Girl\ on\ Laptop_edited.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -95,11 +97,12 @@ aside{
 
 /* ///////////////////////////////////////////////////////////////////////////// */
 @media (min-width: 992px){
-  body{
-    background-image: url("./images/eLearning\ Girl\ on\ Laptop_edited.webp") ;
-
+  .bg{
+    background-image: url("../images/eLearning\ Girl\ on\ Laptop_edited.webp") ;
+    height: 100%;
+    background-position: center;
     background-repeat: no-repeat;
-    
+    background-size: cover
   };
   header{
     background-image: none;
@@ -107,7 +110,6 @@ aside{
     height: 0px;
   }
   form{
-    width: 0;
     margin: 0;
     width: 33.33333333% !important;
     margin-top: 10% !important;

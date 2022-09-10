@@ -12,11 +12,23 @@ const firebaseConfig = {
   appId: "1:1032707806231:web:c76c757ff5910e9e6bf852"
 };
 const app = initializeApp(firebaseConfig);
-// const db = new DB(app);
+const db = new DB(app);
 const auth = new Auth(app);
 auth.checkUserStatus();
-const storage = new Storage(app);
-storage.uploadUserImage(123456)
+$(document).ready(function(){
+  $('#login__form').submit(function(event){
+    event.preventDefault();
+    var email = $('#email').val();
+    var password = $('#password').val();
+    console.log(email);
+    console.log(password);
+    auth.signIn(email,password);
+    this.reset();
+  })
+});
+// auth.checkUserStatus();
+// const storage = new Storage(app);
+// storage.uploadUserImage(123456)
 // auth.signUp('beado@gmail.com',123456,'Mohamed Elsayed', 'student');
 // auth.signUp('beeado@gmail.com',123456,'Mohamed Zayed', 'instructor');
 
