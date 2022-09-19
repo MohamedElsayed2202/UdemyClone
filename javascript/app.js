@@ -14,14 +14,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = new DB(app);
 const auth = new Auth(app);
+// auth.signOut();
 auth.checkUserStatus();
 $(document).ready(function(){
   $('#login__form').submit(function(event){
     event.preventDefault();
     var email = $('#email').val();
     var password = $('#password').val();
-    console.log(email);
-    console.log(password);
+    // console.log(email);
+    // console.log(password);
     auth.signIn(email,password);
     this.reset();
   })
